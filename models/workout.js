@@ -44,6 +44,22 @@ const WorkoutSchema = new Schema({
         }
     ],
 
+    toJSON:{
+        virtuals: true,
+    }
+
+    WorkoutSchema.vitual("totalDuration").get(function) {
+        return this.exercises.reduce((tatal, current) => {
+            total + current.duration, 0;
+        });
+    });
+
+    WorkoutSchema.virtual("totalDuration").get(function () {
+        return this.exercises.reduce((total, current) => {
+          total + current.duration, 0;
+        });
+      });
+
     // isCardio: {
     //     type: Boolean,
     //     default: false
