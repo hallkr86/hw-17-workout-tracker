@@ -6,43 +6,52 @@ const WorkoutSchema = new Schema({
 
     day:    {
             type: Date,
-            default: Date.now()
+            default: Date.now
         },
 
     exercises: [ 
         {
         type: {
-            type: String
+            type: String,
+            trim: true,
+            required: "Type is required"
         },
         name: {
-            type: String
+            type: String,
+            trim: true,
+            required: "Name is required"
         },
         duration: {
-            type: Number
+            type: Number,
+            required: "Duration is required"
         },
         weight: {
-            type: Number
+            type: Number,
+            required: "Weight is required"
         },
         reps: {
-            type: Number
+            type: Number,
+            required: "Reps are required"
         },
         sets: {
-            type: Number
+            type: Number,
+            required: "Sets are required"
         },
         distance: {
-            type: Number
+            type: Number,
+            required: "Distance is required"
         }
         }
     ],
 
-    isCardio: {
-        type: Boolean,
-        default: false
-        },
-    isResistance: {
-        type: Boolean,
-        default: true
-        }
+    // isCardio: {
+    //     type: Boolean,
+    //     default: false
+    //     },
+    // isResistance: {
+    //     type: Boolean,
+    //     default: true
+    //     }
 });
   
 
