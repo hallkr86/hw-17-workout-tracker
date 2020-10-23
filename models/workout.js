@@ -48,11 +48,7 @@ const WorkoutSchema = new Schema({
         virtuals: true,
     }
 
-    WorkoutSchema.vitual("totalDuration").get(function) {
-        return this.exercises.reduce((tatal, current) => {
-            total + current.duration, 0;
-        });
-    });
+});  
 
     WorkoutSchema.virtual("totalDuration").get(function () {
         return this.exercises.reduce((total, current) => {
@@ -68,7 +64,7 @@ const WorkoutSchema = new Schema({
     //     type: Boolean,
     //     default: true
     //     }
-});
+
   
 
 
