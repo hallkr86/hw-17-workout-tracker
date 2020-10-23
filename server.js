@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
+const db = require("./models");
 // const logger = require("morgan");
 // const path = require("path");
 
@@ -37,6 +38,36 @@ app.get("/api/config", (req, res) => {
     success: true,
   });
 });
+
+app.get("/api/workout", (req, res) => {
+    db.Workout.find({})
+      .then((foundWorkout) => {
+        res.json(foundWorkout);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.json({
+          error: true,
+          data: null,
+          message: "Failed to retrieve exercises.",
+        });
+      });
+  });
+
+  app.post("/api/workout", (req, res) => {
+    db.Workout.create(req.body)
+      .then((newWorkout) => {
+        res.json(newWorkout);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.json({
+          error: true,
+          data: null,
+          message: "Failed to create new exercise.",
+        });
+      });
+  });
 
 // //app.use(ingredientsController);
 // //app.use(pizzaController);
