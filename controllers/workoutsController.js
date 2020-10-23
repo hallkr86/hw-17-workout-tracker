@@ -47,6 +47,36 @@ router.get("/api/workouts", (req, res) => {
       });
   });
 
+  router.get("/api/workouts/range", (req, res) => {
+    db.Workout.find({})
+      .then((foundRange) => {
+        res.json(foundRange);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.json({
+          error: true,
+          data: null,
+          message: "Failed to retrieve exercises.",
+        });
+      });
+  });
+
+  router.put("/api/workouts/:id", (req, res) => {
+    db.Workout.findByIdAndUpdate(req.params.id, req.body, {new:true})
+       .then((updatedWorkout) => {
+        res.json(updatedWorkout);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.json({
+          error: true,
+          data: null,
+          message: "Failed to update exercise.",
+        });
+      });
+  });
+
 router.post("/api/workouts", (req, res) => {
     db.Workout.create(req.body)
       .then((newWorkouts) => {
@@ -61,5 +91,22 @@ router.post("/api/workouts", (req, res) => {
         });
       });
   });
+
+  router.delete("/api/workouts/:id", (req, res) => {
+    db.Workout.findByIdAndDelete(req.params.id)
+      .then((deletedItem) => {
+        res.json(deletedItem);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.json({
+          error: true,
+          data: null,
+          message: "Failed to delete exercise.",
+        });
+      });
+  });
+
+  
 
 module.exports = router;
