@@ -10,12 +10,12 @@ This is a workout logger app that helps you keep track of your workouts that con
 
 ### Deployed Link
 
-**https://workout-kh.herokuapp.com/?id=5f939e2c6a68e700178e0d56**
+**https://workout-tracker-qo0v.onrender.com/?id=6841aafdfb4582004ebf334f**
 
 
 ### Installation
 
-This app is deployed on Heroku. Once you enter the url, you can choose between a cardio or resistance workout and enter details such as weights, reps, etc.
+This app is deployed on Render. Once you enter the url, you can choose between a cardio or resistance workout and enter details such as weights, reps, etc. You can also see your overall progress by clicking Dashboard, which is located in the navigation bar.
 
 ### Usage
 
