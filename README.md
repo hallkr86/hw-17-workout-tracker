@@ -10,7 +10,7 @@ This is a workout logger app that helps you keep track of your workouts that con
 
 ### Deployed Link
 
-**https://workout-tracker-qo0v.onrender.com/?id=6841aafdfb4582004ebf334f**
+**https://workout-tracker-qo0v.onrender.com**
 
 
 ### Installation
